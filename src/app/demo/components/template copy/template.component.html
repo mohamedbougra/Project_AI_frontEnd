@@ -1,0 +1,51 @@
+<div class="grid p-fluid">
+    <div class="col-12">
+        <p-menubar [model]="tieredItems">
+            <ng-template pTemplate="end">
+                <span class="p-input-icon-right">
+                    <input type="text" pInputText placeholder="Search" />
+                    <i class="pi pi-search"></i>
+                </span>
+            </ng-template>
+        </p-menubar>
+    </div>
+
+    <div class="col-12">
+        <p-breadcrumb
+            [model]="items"
+            [home]="{ icon: 'pi pi-home' }"
+        ></p-breadcrumb>
+    </div>
+
+    <div class="col-12">
+        <div class="card card-w-title flex flex-wrap">
+            <div class="col-12 mt-3 mb-2">
+                <!-- travailler avec H5 dans votre grandes titres -->
+                <h2 class="text-900 font-bold mb-2">Title</h2>
+                <!-- travailler avec H5 dans votre sub titres -->
+                <h3 class="text-600 text-2xl">
+                    sub title (description de votre page)
+                </h3>
+            </div>
+            <!-- travailler avec button btn bleu pour les buttons valide ou next -->
+            <p-button
+                label="valide"
+                icon="pi pi-check"
+                class="ml-5 font-light line-height-2"
+            ></p-button>
+            <!-- travailler avec button btn bleu pour les buttons annuller ou cancel -->
+            <p-button
+                label="Cancel"
+                styleClass="p-button-raised p-button-text"
+                class="ml-5 font-light line-height-2"
+            ></p-button>
+            <!-- travailler avec button btn bleu pour les buttons Delete -->
+            <p-button
+                label="Submit"
+                icon="pi pi-trash"
+                class="ml-5 font-light line-height-2"
+                styleClass="p-button-danger"
+            ></p-button>
+        </div>
+    </div>
+</div>

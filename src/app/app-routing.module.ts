@@ -9,6 +9,14 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
             {
                 path: '', component: AppLayoutComponent,
                 children: [
+
+            { path: '', loadChildren: () => import('./demo/components/template/template.module').then(m => m.TemplateModule) },
+           
+        ]
+    },
+            {
+                path: '', component: AppLayoutComponent,
+                children: [
                     { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
                     { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule) },
@@ -17,6 +25,7 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) }
                 ]
             },
+            
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
             { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
             { path: 'notfound', component: NotfoundComponent },
